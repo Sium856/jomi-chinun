@@ -1,0 +1,32 @@
+:root{--bg:#f3f5ef;--card:#fff;--tx:#1b2a22;--mut:#5f6f66;--bd:#d6ddd2;--pri:#0f5c3a;--ok:#1f8a46;--wn:#b7791f;--rk:#c0392b;--nv:#6b7280;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1712;--card:#17211b;--tx:#e6efe9;--mut:#9db0a4;--bd:#2a3a30;--pri:#2e9d5f}}
+:root[data-theme="dark"]{--bg:#0f1712;--card:#17211b;--tx:#e6efe9;--mut:#9db0a4;--bd:#2a3a30;--pri:#2e9d5f}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.65 "Hind Siliguri",system-ui,sans-serif}
+#app{max-width:920px;margin:0 auto;padding:14px}
+h1{font-size:23px;margin:4px 0}h2{font-size:17px;margin:0 0 8px}
+.mut{color:var(--mut)}.small{font-size:12.5px}.rk{color:var(--rk)}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:16px;margin:12px 0}
+.narrow{max-width:400px;margin:40px auto}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+label{display:block;margin:8px 0 3px;font-size:13px;color:var(--mut)}
+input{width:100%;padding:9px;border:1px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--tx);font:inherit}
+button{padding:8px 14px;border:1px solid var(--bd);border-radius:8px;background:var(--card);color:var(--tx);font:inherit;cursor:pointer}
+button.pri,.tabs button.on{background:var(--pri);border-color:var(--pri);color:#fff}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
+.top{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.badge{display:inline-block;padding:2px 12px;border-radius:99px;color:#fff;font-size:13px}
+.b-ok{background:var(--ok)}.b-wn{background:var(--wn)}.b-rk{background:var(--rk)}.b-nv{background:var(--nv)}
+.score{font-size:30px;font-weight:700;margin-left:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.grid .card{margin:0}
+.big{font-size:28px;font-weight:700}.bar{height:10px;border-radius:5px;margin-bottom:8px;min-width:3px}
+.wrap{overflow-x:auto}table{width:100%;border-collapse:collapse}
+th,td{padding:7px;border-bottom:1px solid var(--bd);text-align:left;font-size:14px;white-space:nowrap}
+.disc{background:rgba(183,121,31,.14);border-left:4px solid var(--wn);padding:8px 10px;border-radius:6px;font-size:13.5px}.why{margin-top:10px}.wr{padding:8px 0;border-bottom:1px solid var(--bd);font-size:14px}.lang button{padding:4px 10px}.okc{color:var(--ok)}.plain{background:rgba(31,138,70,.12);border-left:4px solid var(--ok);padding:8px 10px;border-radius:6px;font-size:14px;margin:8px 0}.chk{display:inline-block;margin-right:14px}.chk input{width:auto}
+.card{box-shadow:0 1px 3px rgba(0,0,0,.07)}.pw{display:flex;gap:6px}.pw input{flex:1}
+.bar2{background:var(--pri);color:#fff;border-radius:12px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.brand{font-size:19px}.brand span{display:block;font-size:12px;opacity:.85}
+.bar2 button{background:transparent;color:#fff;border-color:rgba(255,255,255,.55);padding:5px 12px}.bar2 .lang button.on{background:#fff;color:var(--pri)}
+.hero{text-align:center;margin-bottom:6px}a{color:var(--pri)}
+@media print{.why{display:block}body *{visibility:hidden}.rep,.rep *{visibility:visible}.rep{position:absolute;left:0;top:0;width:100%;background:#fff;color:#000}.noprint{display:none}}
