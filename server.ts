@@ -8,9 +8,9 @@ import bcrypt from 'bcryptjs';
 
 dotenv.config();
 
-import { db, initDb } from './src/db.js';
-import { SqliteSessionStore } from './src/session-store.js';
-import { requireAuth, requireAdmin, AuthenticatedRequest, generateToken, revokeToken } from './src/auth.js';
+import { db, initDb } from './db.js';
+import { SqliteSessionStore } from './session-store.js';
+import { requireAuth, requireAdmin, AuthenticatedRequest, generateToken, revokeToken } from './auth.js';
 import {
   toEnDigits,
   norm,
@@ -21,7 +21,7 @@ import {
   PlotRecord,
   SetbackRuleRecord,
   LandRecord
-} from './src/rules.js';
+} from './rules.js';
 
 // Initialize SQLite database and seed initial demo data
 initDb();
