@@ -114,7 +114,7 @@ export function initDb() {
   `);
 
   // Execute database/land_features_seed.sql if it exists
-  const seedSqlFile = path.resolve('./database/land_features_seed.sql');
+  const seedSqlFile = path.resolve('./land_features_seed.sql');
   if (fs.existsSync(seedSqlFile)) {
     try {
       const sqlContent = fs.readFileSync(seedSqlFile, 'utf-8');
