@@ -129,8 +129,7 @@ http://localhost:3000
    - Set `DATABASE_PATH=/var/data/jomi_chinun.db`.
    - *If running without a persistent disk on Render free tier, the database file will re-create and seed itself on each container restart.*
 
-### ⚠️ Note on Vercel:
-**Vercel is NOT suitable for this application**. Vercel runs stateless serverless functions with a read-only, ephemeral file system. SQLite requires a writable local disk for ACID transactions, WAL mode, and session persistence. Use Render, Railway, Fly.io, or Google Cloud Run with persistent storage instead.
+
 
 ---
 
