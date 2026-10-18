@@ -129,24 +129,10 @@ http://localhost:3000
    - Set `DATABASE_PATH=/var/data/jomi_chinun.db`.
    - *If running without a persistent disk on Render free tier, the database file will re-create and seed itself on each container restart.*
 
+7.**⏱️ Free-tier Cold Start Note**
 
+On Render's free plan, the service goes to sleep after 15 minutes of inactivity.
+To reduce this, UptimeRobot pings the `/api/health` endpoint every 5 minutes.
+The first request after a long idle period may still take 30–60 seconds.
 
 ---
-
-## 📝 List of Changes Made to Original app.js
-
-1. **Brand Rename**: Updated all titles, hero headings, and navigation bars from `"Land Buy Checker"` to `"জমি চিনুন"` across both English and Bangla modes.
-2. **State & Storage Migration**: Removed local `localStorage.getItem("lbc3")` for app data, user records, and land records. Only the user's language preference (`jomi_lang`) remains in client storage.
-3. **API Client Layer (SRC)**: Transformed `SRC` into the single gateway making authenticated `fetch()` calls with `credentials: "same-origin"` to `/api/*`.
-4. **Authentication Flow**:
-   - `login()` and `reg()` now call `POST /api/auth/login` and `POST /api/auth/register`.
-   - `logout()` calls `POST /api/auth/logout`.
-   - `init()` queries `GET /api/auth/me` on initial load to maintain persistent sessions across page reloads.
-   - `forgot()` and `resetPw()` call backend endpoints with 10-minute expiry and attempt tracking.
-5. **Server-Side 5-Rule Engine**: Replaced client-side calculation in `run()` with `POST /api/check`. The server evaluates the rules, computes weights (35/15/40/30/30), determines status, and returns the snapshot.
-6. **Server-Side Setback Evaluation**: Setback guidance is computed on the server based on matched road authority and width. The client receives the calculated guidance (`p.guidance`), ensuring normal users cannot dump the internal rules table.
-7. **Admin Operations**:
-   - Dashboard stats in `dash` tab load via `GET /api/admin/stats`.
-   - Land record management (`saveLand`, `delLand`) dispatches REST requests to `/api/admin/lands`.
-   - Plot and setback rule management (`plotsAdmin`, `rulesAdmin`) dispatch REST requests to `/api/admin/plots` and `/api/admin/rules`.
-8. **Network Error Handling**: Added user-friendly network error notifications for failed requests in both English and Bangla.
